@@ -28,9 +28,9 @@ function Dashboard() {
         </div>
       }
     >
-      <div className="px-8 py-8 max-w-[1400px]">
+      <div className="px-8 py-8 max-w-[1500px]">
         <div className="text-xs text-muted-foreground">Thursday, 7 May</div>
-        <h1 className="font-serif text-5xl mt-1">Good morning, Aanya.</h1>
+        <h1 className="font-serif text-5xl mt-1">Good morning, Rakesh.</h1>
         <p className="text-muted-foreground mt-2">3 reviews pending · 2 client previews scheduled today.</p>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
@@ -40,7 +40,7 @@ function Dashboard() {
               <div key={s.label} className="rounded-2xl bg-card border border-border p-5">
                 <div className="flex items-start justify-between">
                   <div className="text-xs text-muted-foreground">{s.label}</div>
-                  <div className="size-8 rounded-full bg-accent grid place-items-center"><Icon className="size-4" /></div>
+                  <div className="size-8 rounded-full bg-sand text-foreground grid place-items-center"><Icon className="size-4" /></div>
                 </div>
                 <div className="font-serif text-4xl mt-3">{s.value}</div>
                 <div className="text-xs text-muted-foreground mt-2">{s.delta}</div>
@@ -57,9 +57,9 @@ function Dashboard() {
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               {recentProjects.map((p) => (
-                <Link key={p.id} to="/workspace" className="group rounded-2xl bg-card border border-border overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img src={p.image} alt={p.name} className="size-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+                <Link key={p.id} to="/workspace" className="group relative rounded-2xl bg-card border border-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="aspect-video overflow-hidden">
+                    <img src={p.image} alt={p.name} className="size-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                   </div>
                   <div className="p-4">
                     <div className="flex items-start justify-between gap-3">
@@ -85,7 +85,7 @@ function Dashboard() {
               <ul className="space-y-4">
                 {teamActivity.map((t, i) => (
                   <li key={i} className="flex gap-3 text-sm">
-                    <div className="size-8 rounded-full bg-leaf text-leaf-foreground grid place-items-center text-xs font-medium shrink-0">{t.initials}</div>
+                    <div className="size-8 rounded-full bg-sand text-foreground grid place-items-center text-xs font-medium shrink-0">{t.initials}</div>
                     <div className="min-w-0">
                       <p className="leading-snug"><span className="font-medium">{t.name}</span> <span className="text-muted-foreground">{t.action}</span> <span className="font-medium">{t.target}</span></p>
                       <div className="text-xs text-muted-foreground mt-1">{t.time}</div>
@@ -105,6 +105,9 @@ function Dashboard() {
                   </div>
                 ))}
               </div>
+              <Link to="/templates" className="mt-4 flex w-full items-center justify-center rounded-xl bg-card border border-border py-2.5 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors">
+                Browse library
+              </Link>
             </div>
           </div>
         </div>

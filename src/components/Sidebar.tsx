@@ -20,7 +20,7 @@ export function Sidebar() {
   }, [dark]);
 
   return (
-    <aside className="w-60 shrink-0 border-r border-border bg-sand/60 flex flex-col">
+    <aside className="w-60 shrink-0 border-r border-border bg-sand/60 flex flex-col sticky top-0 h-screen">
       <div className="px-5 py-5 flex items-center gap-3">
         <div className="size-9 rounded-xl bg-leaf text-leaf-foreground grid place-items-center">
           <Sprout className="size-5" />
@@ -31,7 +31,7 @@ export function Sidebar() {
         </div>
       </div>
 
-      <nav className="px-3 py-2 space-y-1 flex-1">
+      <nav className="px-3 py-2 space-y-1 flex-1 overflow-y-auto">
         {nav.map(({ to, label, icon: Icon }) => {
           const active = path === to || (to !== "/dashboard" && path.startsWith(to));
           return (
