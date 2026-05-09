@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { LayoutDashboard, FilePlus2, Sparkles, LayoutGrid, FileText, Presentation, Settings, Moon, Sun, Sprout } from "lucide-react";
+import { LayoutDashboard, FilePlus2, Sparkles, LayoutGrid, FileText, Presentation, Settings, Moon, Sun, Sprout, ShieldCheck, LogOut } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 const nav = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
